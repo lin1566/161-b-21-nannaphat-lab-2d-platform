@@ -1,11 +1,11 @@
 using UnityEngine;
 
-public class Ant: Enemy
+public class Player : Character
 {
 
     private void Start()
     {
-        base.Initialize(20);
+        base.Initialize(100);
     }
     private void Update()
     {
