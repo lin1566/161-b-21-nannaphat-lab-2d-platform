@@ -7,6 +7,11 @@ public class Croccodile:Enemy
         base.Initialize(50);
     }
 
+
+    public override void Behavior()
+    {
+        throw new System.NotImplementedException();
+    }
     private void Update()
     {
         
