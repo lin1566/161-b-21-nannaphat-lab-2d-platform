@@ -26,6 +26,7 @@ public abstract class Character : MonoBehaviour
     { 
         Health -= damage;
         Debug.Log($"{this.name} take damage {damage} .Current Health: {Health}");
+        IsDead();
 
     }
     public bool IsDead()
