@@ -10,7 +10,7 @@ public abstract class Character : MonoBehaviour
         set { health = (value < 0)? 0 : value; }
     }
 
-    protected Animator anin;
+    protected Animator Anim;
     protected Rigidbody2D rb;
 
     public void Initialize(int startHealth)
@@ -20,7 +20,7 @@ public abstract class Character : MonoBehaviour
 
         rb = GetComponent<Rigidbody2D>();
 
-        anin = GetComponent<Animator>();
+        Anim = GetComponent<Animator>();
     }
     public void TakeDamage(int damage)
     { 

@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 459296}
   - component: {fileID: 21226392}
-  - component: {fileID: 6149632}
-  - component: {fileID: 5076126}
   - component: {fileID: 4246073097244293608}
+  - component: {fileID: -6926495517843120617}
+  - component: {fileID: -207210323655466529}
   m_Layer: 0
   m_Name: Rock
   m_TagString: Untagged
@@ -90,8 +90,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &6149632
-BoxCollider2D:
+--- !u!114 &4246073097244293608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 115806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 156667f4e72d6ce4dad51ee737868a14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 0
+  rb: {fileID: -207210323655466529}
+  force: {x: 0, y: 0}
+--- !u!58 &-6926495517843120617
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -125,18 +140,8 @@ BoxCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.92, y: 0.86}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 0.92, y: 0.86}
-  m_EdgeRadius: 0
---- !u!50 &5076126
+  m_Radius: 0.46
+--- !u!50 &-207210323655466529
 Rigidbody2D:
   serializedVersion: 5
   m_ObjectHideFlags: 0
@@ -161,20 +166,5 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 1
+  m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &4246073097244293608
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 115806}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 156667f4e72d6ce4dad51ee737868a14, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 0
-  rb: {fileID: 5076126}
-  force: {x: 0, y: 0}

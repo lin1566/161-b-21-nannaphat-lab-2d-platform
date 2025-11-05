@@ -1,16 +1,18 @@
 using UnityEngine;
 
-public class Croccodile:Enemy, IShootable
+public class Crocodile : Enemy, IShootable
 {
     [SerializeField] private float atkRange;
-    public Player player;
+    [SerializeField] public Player player;//target to atk
 
     [field: SerializeField] public GameObject Bullet { get; set; }
     [field: SerializeField] public Transform ShootPoint { get; set; }
+
     public float ReloadTime { get; set; }
     public float WaitTime { get; set; }
 
-    private void Start()
+    // Unity Message | 0 references
+    void Start()
     {
         base.Initialize(50);
         DamageHit = 30;
@@ -19,14 +21,15 @@ public class Croccodile:Enemy, IShootable
         atkRange = 6.0f;
         player = GameObject.FindFirstObjectByType<Player>();
 
+        //set timers variables for throwing rock
         WaitTime = 0.0f;
-        ReloadTime = 2.0f;
-       
+        ReloadTime = 5.0f; //throw Rock every 5 sec
     }
 
+    // Unity Message | 0 references
     private void FixedUpdate()
     {
-       WaitTime += Time.fixedDeltaTime;  
+        WaitTime += Time.fixedDeltaTime; //timer
         Behavior();
     }
 
@@ -35,20 +38,21 @@ public class Croccodile:Enemy, IShootable
         Vector2 distance = transform.position - player.transform.position;
         if (distance.magnitude <= atkRange)
         {
+            //Shoot Player
             Debug.Log($"{player.name} is in the {this.name}'s atk range!");
             Shoot();
         }
     }
+
     public void Shoot()
     {
         if (WaitTime >= ReloadTime)
         {
-            anin.SetTrigger("Shoot"); //call Shoot animation
+            Anim.SetTrigger("Shoot"); //call Shoot animation
             var bullet = Instantiate(Bullet, ShootPoint.position, Quaternion.identity);
             Rock rock = bullet.GetComponent<Rock>();
             rock.InitWeapon(30, this);
             WaitTime = 0;
         }
     }
-   
 }
