@@ -31,14 +31,14 @@ public abstract class Weapon : MonoBehaviour
         if (character != null)
         {
             OnHitWith(character);
-            Destroy(this.gameObject, 5f);
+            Destroy(this.gameObject, 5f); // <<< ทำลาย Rock หลังจาก 5 วินาที
         }
     }
-    public void Start()
+    void Start()
     {
         
     }
-    public void Update()
+    void Update()
     {
         
     }

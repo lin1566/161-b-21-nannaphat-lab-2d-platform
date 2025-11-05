@@ -7,9 +7,13 @@ public class Player : Character,IShootable
     public float ReloadTime { get; set ; }
     public float WaitTime { get; set; }
 
-    private void Start()
+    private void Awake() // เปลี่ยนจาก Start เป็น Awake
     {
-        base.Initialize(100);
+        Initialize(100); // ต้องเรียก Initialize เป็นสิ่งแรกสุด
+
+        // Debug ตรวจสอบ:
+        Debug.Log($"[PLAYER INIT] Health set to: {Health}");
+
         ReloadTime = 1.0f;
         WaitTime = 0.0f;
     }
