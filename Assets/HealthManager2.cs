@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HealthManager : MonoBehaviour
+public class HealthManager2 : MonoBehaviour
 {
     public Image healthBar;
     public float healthAmount = 100f;
@@ -22,12 +22,12 @@ public class HealthManager : MonoBehaviour
             Application.LoadLevel(Application.loadedLevel);
         }
 
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Z))
         {
             TakeDamage(20);
         }
 
-        
+       
     }
 
     public void TakeDamage(float damage)
