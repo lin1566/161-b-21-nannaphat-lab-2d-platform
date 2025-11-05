@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Rock : Weapon
 {
@@ -17,10 +17,19 @@ public class Rock : Weapon
             obj.TakeDamage(this.damage);
     }
 
-    void Start()
+    new void Start()
     {
         damage = 40;
         force = new Vector2(GetShootDirection() * 90, 400);
         Move(); //add force to rock immediately once created
+    }
+
+    new void Update()
+    {
+
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log("Rock Hit: " + collision.name);
     }
 }

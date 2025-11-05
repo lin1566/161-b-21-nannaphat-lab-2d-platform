@@ -20,13 +20,13 @@ public class Croccodile:Enemy, IShootable
         player = GameObject.FindFirstObjectByType<Player>();
 
         WaitTime = 0.0f;
-        ReloadTime = 5.0f;
+        ReloadTime = 2.0f;
        
     }
 
     private void FixedUpdate()
     {
-       WaitTime = Time.fixedDeltaTime;  
+       WaitTime += Time.fixedDeltaTime;  
         Behavior();
     }
 

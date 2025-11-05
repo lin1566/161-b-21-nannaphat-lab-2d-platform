@@ -18,7 +18,7 @@ public class Banana : Weapon
         if (character is Enemy)
             character.TakeDamage(this.damage);
     }
-    private void Start()
+     new void Start()
     {
         speed = 4.0f * GetShootDirection();
         damage = 30;
